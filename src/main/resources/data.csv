@@ -1,0 +1,5 @@
+name,age,isMarried,address
+John,30,true,
+Mary,25,false,"[""reading"",""hiking""]"
+Bob,40,true,"{street:123 Main St,city:Anytown,state:CA}"
+Alice,28,false,"[1,2,""three""]"
