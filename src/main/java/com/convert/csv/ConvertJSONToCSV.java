@@ -9,15 +9,16 @@ import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import java.io.File;
 import java.io.IOException;
 
-public class ConvertCSVToJSON {
+public class ConvertJSONToCSV {
     public static void main(String[] args) throws IOException {
         JsonNode jsonNode = new ObjectMapper().readTree(new File("src/main/resources/dataJson.json"));
-        System.out.println(jsonNode.toPrettyString());
+
         CsvSchema.Builder builder = CsvSchema.builder()
                 .addColumn("name")
                 .addColumn("code")
                 .addColumn("date")
-                .addColumn("gotMarried");
+                .addColumn("gotMarried")
+                .addArrayColumn("group",",");
 
         CsvSchema csvSchema = builder.build().withHeader();
 
