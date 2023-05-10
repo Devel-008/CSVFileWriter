@@ -3,9 +3,11 @@ package com.convert.csv;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 
-import java.io.File;
+
 import java.io.FileWriter;
 import java.io.IOException;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -90,9 +92,9 @@ public class ConvertToCSV {
     private static String convertArrayToString(Object array) {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
-        int length = java.lang.reflect.Array.getLength(array);
+        int length = Array.getLength(array);
         for(int i = 0; i < length; i++) {
-            Object value = java.lang.reflect.Array.get(array, i);
+            Object value = Array.get(array, i);
             if(value instanceof String) {
                 sb.append("\"");
                 sb.append(value);
